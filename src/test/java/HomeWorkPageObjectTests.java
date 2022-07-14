@@ -14,9 +14,7 @@ public class HomeWorkPageObjectTests {
     public static void main(String[] args) {
 
         setUp();
-        clickButtonsTest();
         alertsTests();
-        SwitchToNewPageTest();
         driver.quit();
     }
 
@@ -34,7 +32,7 @@ public class HomeWorkPageObjectTests {
         buttonsPage.open();
         buttonsPage.DoubleClickButton("doubleClickBtn");
         buttonsPage.RightMouseButtonClick("rightClickBtn");
-        buttonsPage.LeftMouseButtonClick("Click Me");
+        buttonsPage.LeftMouseButtonClick();
         boolean isHaveDoubleClickText = buttonsPage.isEmpty("doubleClickMessage");
         boolean isHaveRightClickText = buttonsPage.isEmpty("rightClickMessage");
         boolean isHaveClickText = buttonsPage.isEmpty("dynamicClickMessage");
@@ -48,12 +46,9 @@ public class HomeWorkPageObjectTests {
 
     public static void alertsTests() {
         alertsPage.open();
-        WebElement buttonAlert = alertsPage.findElement("alertButton");
-        alertsPage.ClickAlertAndAccept(buttonAlert);
-        WebElement buttonTimerAlert = alertsPage.findElement("timerAlertButton");
-        alertsPage.ClickTimerAlertAndAccept(buttonTimerAlert);
-        WebElement confirmTimerAlert = alertsPage.findElement("confirmButton");
-        alertsPage.ClickConfirmAlertAndAccept(confirmTimerAlert);
+        alertsPage.ClickAlertAndAccept();
+        alertsPage.ClickTimerAlertAndAccept();
+        alertsPage.ClickConfirmAlertAndAccept();
 
         boolean isHaveTextAfterConfirmAlert = alertsPage.isEmpty();
 
@@ -66,8 +61,7 @@ public class HomeWorkPageObjectTests {
 
     public static void SwitchToNewPageTest() {
         browserWindowsPage.open();
-        WebElement buttonNewTab = browserWindowsPage.findButton("tabButton");
-        browserWindowsPage.openOtherPageInNewTab(buttonNewTab, "https://google.com");
+        browserWindowsPage.openOtherPageInNewTab("https://google.com");
         if (browserWindowsPage.atPage("Google")) {
             System.out.println("Тест пройден!");
         } else {

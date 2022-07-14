@@ -16,13 +16,10 @@ public class BrowserWindowsPage {
         webDriver.get("https://demoqa.com/browser-windows");
     }
 
-    public WebElement findButton(String id) {
-        return webDriver.findElement(By.id(id));
-    }
+    public void openOtherPageInNewTab(String newPage) {
 
-    public void openOtherPageInNewTab(WebElement button, String newPage) {
-
-        button.click();
+        WebElement newTabButton = webDriver.findElement(By.id("tabButton"));
+        newTabButton.click();
         String demoWindowDescriptor = webDriver.getWindowHandle();
 
         Set<String> handles = webDriver.getWindowHandles();

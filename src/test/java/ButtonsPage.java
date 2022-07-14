@@ -31,8 +31,8 @@ public class ButtonsPage {
                 .perform();
     }
 
-    public void LeftMouseButtonClick(String text) {
-        WebElement button = webDriver.findElement(By.xpath(String.format("//button[text() = \"%s\"]", text)));
+    public void LeftMouseButtonClick() {
+        WebElement button = webDriver.findElement(By.xpath("//button[text() = \"Click Me\"]"));
         new Actions(webDriver)
                 .click(button)
                 .build()
