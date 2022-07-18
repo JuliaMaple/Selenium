@@ -13,13 +13,14 @@ public class AlertsPage {
     private final By alertButton = By.xpath("//button[@id = \"alertButton\"]");
     private final By timerAlertButton = By.xpath("//button[@id = \"timerAlertButton\"]");
     private final By confirmButton = By.xpath("//button[@id = \"confirmButton\"]");
+    private final String urlPageWithAlerts = "https://demoqa.com/alerts";
 
     public AlertsPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
     public void open() {
-        webDriver.get("https://demoqa.com/alerts");
+        webDriver.get(urlPageWithAlerts);
     }
 
 

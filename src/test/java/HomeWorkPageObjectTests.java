@@ -14,7 +14,9 @@ public class HomeWorkPageObjectTests {
     public static void main(String[] args) {
 
         setUp();
+        clickButtonsTest();
         alertsTests();
+        SwitchToNewPageTest();
         driver.quit();
     }
 
@@ -30,12 +32,12 @@ public class HomeWorkPageObjectTests {
 
     public static void clickButtonsTest() {
         buttonsPage.open();
-        buttonsPage.DoubleClickButton("doubleClickBtn");
-        buttonsPage.RightMouseButtonClick("rightClickBtn");
+        buttonsPage.DoubleClickButton();
+        buttonsPage.RightMouseButtonClick();
         buttonsPage.LeftMouseButtonClick();
-        boolean isHaveDoubleClickText = buttonsPage.isEmpty("doubleClickMessage");
-        boolean isHaveRightClickText = buttonsPage.isEmpty("rightClickMessage");
-        boolean isHaveClickText = buttonsPage.isEmpty("dynamicClickMessage");
+        boolean isHaveDoubleClickText = buttonsPage.isDoubleClickMessageEmpty();
+        boolean isHaveRightClickText = buttonsPage.isRightMouseClickMessageEmpty();
+        boolean isHaveClickText = buttonsPage.isLeftMouseClickMessageEmpty();
 
         if (isHaveDoubleClickText && isHaveRightClickText && isHaveClickText) {
             System.out.println("Тест пройден!");
@@ -69,6 +71,5 @@ public class HomeWorkPageObjectTests {
         }
 
     }
-
 
 }

@@ -8,13 +8,14 @@ import java.util.Set;
 public class BrowserWindowsPage {
     private final WebDriver webDriver;
     private final By newTabButton = By.id("tabButton");
+    private final String urlPageWithWindows = "https://demoqa.com/browser-windows";
 
     public BrowserWindowsPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
     public void open(){
-        webDriver.get("https://demoqa.com/browser-windows");
+        webDriver.get(urlPageWithWindows);
     }
 
     public void openOtherPageInNewTab(String newPage) {
