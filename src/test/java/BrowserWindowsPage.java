@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class BrowserWindowsPage {
     private final WebDriver webDriver;
+    private final By newTabButton = By.id("tabButton");
 
     public BrowserWindowsPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -18,8 +19,8 @@ public class BrowserWindowsPage {
 
     public void openOtherPageInNewTab(String newPage) {
 
-        WebElement newTabButton = webDriver.findElement(By.id("tabButton"));
-        newTabButton.click();
+        WebElement button = webDriver.findElement(newTabButton);
+        button.click();
         String demoWindowDescriptor = webDriver.getWindowHandle();
 
         Set<String> handles = webDriver.getWindowHandles();

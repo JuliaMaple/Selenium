@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 public class ButtonsPage {
 
     private final WebDriver webDriver;
+    private final By buttonClickMe = By.xpath("//button[text() = \"Click Me\"]");
 
     public ButtonsPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -32,7 +33,7 @@ public class ButtonsPage {
     }
 
     public void LeftMouseButtonClick() {
-        WebElement button = webDriver.findElement(By.xpath("//button[text() = \"Click Me\"]"));
+        WebElement button = webDriver.findElement(buttonClickMe);
         new Actions(webDriver)
                 .click(button)
                 .build()

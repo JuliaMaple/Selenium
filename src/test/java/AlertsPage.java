@@ -10,6 +10,9 @@ public class AlertsPage {
 
     private final WebDriver webDriver;
     private final By textCancel = By.xpath("//span[contains(., 'Cancel')]");
+    private final By alertButton = By.xpath("//button[@id = \"alertButton\"]");
+    private final By timerAlertButton = By.xpath("//button[@id = \"timerAlertButton\"]");
+    private final By confirmButton = By.xpath("//button[@id = \"confirmButton\"]");
 
     public AlertsPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -21,21 +24,21 @@ public class AlertsPage {
 
 
     public void ClickAlertAndAccept() {
-        WebElement alertButton = webDriver.findElement(By.xpath("//button[@id = \"alertButton\"]"));
-        alertButton.click();
+        WebElement button = webDriver.findElement(alertButton);
+        button.click();
         webDriver.switchTo().alert().accept();
     }
 
     public void ClickTimerAlertAndAccept() {
-        WebElement alertTimerButton = webDriver.findElement(By.xpath("//button[@id = \"timerAlertButton\"]"));
+        WebElement button = webDriver.findElement(timerAlertButton);
         WebDriverWait webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(7));
-        alertTimerButton.click();
+        button.click();
         webDriverWait.until(ExpectedConditions.alertIsPresent()).accept();
     }
 
     public void ClickConfirmAlertAndAccept() {
-        WebElement confirmAlertButton = webDriver.findElement(By.xpath("//button[@id = \"confirmButton\"]"));
-        confirmAlertButton.click();
+        WebElement button = webDriver.findElement(confirmButton);
+        button.click();
         webDriver.switchTo().alert().dismiss();
     }
 
