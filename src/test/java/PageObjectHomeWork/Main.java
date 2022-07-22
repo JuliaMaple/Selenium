@@ -1,10 +1,11 @@
+package PageObjectHomeWork;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class HomeWorkPageObjectTests {
+public class Main {
 
     private static WebDriver driver;
     private static ButtonsPage buttonsPage;
@@ -31,7 +32,7 @@ public class HomeWorkPageObjectTests {
     }
 
     public static void clickButtonsTest() {
-        buttonsPage.open();
+//        buttonsPage.open();
         buttonsPage.DoubleClickButton();
         buttonsPage.RightMouseButtonClick();
         buttonsPage.LeftMouseButtonClick();
@@ -47,7 +48,7 @@ public class HomeWorkPageObjectTests {
     }
 
     public static void alertsTests() {
-        alertsPage.open();
+//        alertsPage.open();
         alertsPage.ClickAlertAndAccept();
         alertsPage.ClickTimerAlertAndAccept();
         alertsPage.ClickConfirmAlertAndAccept();
@@ -62,7 +63,6 @@ public class HomeWorkPageObjectTests {
     }
 
     public static void SwitchToNewPageTest() {
-        browserWindowsPage.open();
         browserWindowsPage.openOtherPageInNewTab("https://google.com");
         if (browserWindowsPage.atPage("Google")) {
             System.out.println("Тест пройден!");

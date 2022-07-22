@@ -1,3 +1,5 @@
+package PageObjectHomeWork;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,15 +14,15 @@ public class ButtonsPage {
     private final By doubleClickButtonMessageText = By.id("doubleClickMessage");
     private final By rightMouseClickMessageText = By.id("rightClickMessage");
     private final By leftMouseClickMessageText = By.id("dynamicClickMessage");
-    private final String urlPageWithButtons = "https://demoqa.com/buttons";
 
     public ButtonsPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
-    public void open() {
-        webDriver.get(urlPageWithButtons);
-    }
+//    public void open() {
+//        String urlPageWithButtons = "https://demoqa.com/buttons";
+//        webDriver.get(urlPageWithButtons);
+//    }
 
     public void DoubleClickButton() {
         WebElement button = webDriver.findElement(doubleClickButton);
@@ -45,6 +47,7 @@ public class ButtonsPage {
                 .build()
                 .perform();
     }
+
 
     public boolean isDoubleClickMessageEmpty() {
         return !webDriver.findElements(doubleClickButtonMessageText).isEmpty();

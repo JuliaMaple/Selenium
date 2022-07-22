@@ -1,3 +1,5 @@
+package PageObjectHomeWork;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,15 +15,15 @@ public class AlertsPage {
     private final By alertButton = By.xpath("//button[@id = \"alertButton\"]");
     private final By timerAlertButton = By.xpath("//button[@id = \"timerAlertButton\"]");
     private final By confirmButton = By.xpath("//button[@id = \"confirmButton\"]");
-    private final String urlPageWithAlerts = "https://demoqa.com/alerts";
 
     public AlertsPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
-    public void open() {
-        webDriver.get(urlPageWithAlerts);
-    }
+//    public void open() {
+//        String urlPageWithAlerts = "https://demoqa.com/alerts";
+//        webDriver.get(urlPageWithAlerts);
+//    }
 
 
     public void ClickAlertAndAccept() {
